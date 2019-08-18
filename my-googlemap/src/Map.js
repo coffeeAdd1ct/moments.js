@@ -14,7 +14,7 @@ export class CurrentLocation extends React.Component {
     super(props);
     const { lat, lng } = this.props.initialCenter;
     this.state = {
-      CurrentLocation: {
+      currentLocation: {
         lat: lat,
         lng, lng
       }
@@ -42,23 +42,6 @@ export class CurrentLocation extends React.Component {
     }
   }
 
-  componentDidMount() {
-    if (this.props. centerAroundCurrentLocation) {
-      if (navigator && navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(pos => {
-          const coords = pos.coords;
-          this.setState({
-            currentLocation: {
-              lat: coords.latitude,
-              lng: coords.longitude
-            }
-          });
-        });
-      }
-    }
-    this.loadMap();
-  }
-
   loadMap() {
     if (this.props && this.props.google) {
       const { google } = this.props;
@@ -76,10 +59,28 @@ export class CurrentLocation extends React.Component {
           zoom: zoom
         }
       );
-
       this.map = new maps.Map(node, mapConfig);
     }
   }
+
+  componentDidMount() {
+    if (this.props.centerAroundCurrentLocation) {
+      if (navigator && navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(pos => {
+          const coords = pos.coords;
+          this.setState({
+            currentLocation: {
+              lat: coords.latitude,
+              lng: coords.longitude
+            }
+          });
+        });
+      }
+    }
+    this.loadMap();
+  }
+
+
 
   renderChildren() {
     const { children } = this.props;
@@ -96,8 +97,7 @@ export class CurrentLocation extends React.Component {
     });
   }
 
-  render()
- {
+  render() {
    const style = Object.assign({}, mapStyles.map);
    return (
      <div>

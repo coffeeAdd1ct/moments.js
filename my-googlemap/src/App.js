@@ -32,66 +32,53 @@ export class MapContainer extends Component {
 
   render() {
     return(
-      // <CurrentLocation
-      //   centerAroundCurrentLocation
-      //   google={this.props.google}
-      // >
-      //
-      // <Marker
-      //   onClick={this.onMarkerClick}
-      //   name={'Kenyatta International Convention Centre'}
-      // />
-      // <InfoWindow
-      //   marker={this.state.activeMarker}
-      //   visible={this.state.showingInfoWindow}
-      //   onClose={this.onClose}
-      // >
-      //   <div>
-      //     <h4>{this.state.selectedPlace.name}</h4>
-      //   </div>
-      // </InfoWindow>
-      //
-      // </CurrentLocation>
-
-      
-      <Map google={this.props.google}
-        zoom={14}
-        style={mapStyles}
-        initialCenter={{
-          lat: -1.2884,
-          lng: 36.8233
-        }}
+      <CurrentLocation
+        centerAroundCurrentLocation
+        google={this.props.google}
       >
-        <Marker
-          onClick={this.onMarkerClick}
-          name={'Kenyatta International Convention Centre'}
-        />
-        <InfoWindow
-          marker={this.state.activeMarker}
-          visible={this.state.showingInfoWindow}
-          onClose={this.onClose}
-        >
-          <div>
-            <h4>{this.state.selectedPlace.name}</h4>
-          </div>
-        </InfoWindow>
-      </Map>
+
+      <Marker
+        onClick={this.onMarkerClick}
+        name={'Kenyatta International Convention Centre'}
+      />
+      <InfoWindow
+        marker={this.state.activeMarker}
+        visible={this.state.showingInfoWindow}
+        onClose={this.onClose}
+      >
+        <div>
+          <h4>{this.state.selectedPlace.name}</h4>
+        </div>
+      </InfoWindow>
+
+      </CurrentLocation>
+
+
+      // <Map google={this.props.google}
+      //   zoom={14}
+      //   style={mapStyles}
+      //   initialCenter={{
+      //     lat: -1.2884,
+      //     lng: 36.8233
+      //   }}
+      // >
+      //   <Marker
+      //     onClick={this.onMarkerClick}
+      //     name={'Kenyatta International Convention Centre'}
+      //   />
+      //   <InfoWindow
+      //     marker={this.state.activeMarker}
+      //     visible={this.state.showingInfoWindow}
+      //     onClose={this.onClose}
+      //   >
+      //     <div>
+      //       <h4>{this.state.selectedPlace.name}</h4>
+      //     </div>
+      //   </InfoWindow>
+      // </Map>
     );
   }
 }
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//
-//       </header>
-//     </div>
-//   );
-// }
-//
-// export default App;
-
 export default GoogleApiWrapper ({
   apiKey: 'AIzaSyAZK2fbawNPGNgEZu8I59V_7ch_et-ckNs'
 })(MapContainer);
