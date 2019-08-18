@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
-
+import CurrentLocation from './Map';
 
 const mapStyles = {
   width: '100%',
@@ -32,6 +32,28 @@ export class MapContainer extends Component {
 
   render() {
     return(
+      // <CurrentLocation
+      //   centerAroundCurrentLocation
+      //   google={this.props.google}
+      // >
+      //
+      // <Marker
+      //   onClick={this.onMarkerClick}
+      //   name={'Kenyatta International Convention Centre'}
+      // />
+      // <InfoWindow
+      //   marker={this.state.activeMarker}
+      //   visible={this.state.showingInfoWindow}
+      //   onClose={this.onClose}
+      // >
+      //   <div>
+      //     <h4>{this.state.selectedPlace.name}</h4>
+      //   </div>
+      // </InfoWindow>
+      //
+      // </CurrentLocation>
+
+      
       <Map google={this.props.google}
         zoom={14}
         style={mapStyles}
