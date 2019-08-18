@@ -36,46 +36,20 @@ export class MapContainer extends Component {
         centerAroundCurrentLocation
         google={this.props.google}
       >
-
-      <Marker
-        onClick={this.onMarkerClick}
-        name={'Kenyatta International Convention Centre'}
-      />
-      <InfoWindow
-        marker={this.state.activeMarker}
-        visible={this.state.showingInfoWindow}
-        onClose={this.onClose}
-      >
-        <div>
-          <h4>{this.state.selectedPlace.name}</h4>
-        </div>
-      </InfoWindow>
-
+        <Marker
+          onClick={this.onMarkerClick}
+          name={'Kenyatta International Convention Centre'}
+        />
+        <InfoWindow
+          marker={this.state.activeMarker}
+          visible={this.state.showingInfoWindow}
+          onClose={this.onClose}
+        >
+          <div>
+            <h4>{this.state.selectedPlace.name}</h4>
+          </div>
+        </InfoWindow>
       </CurrentLocation>
-
-
-      // <Map google={this.props.google}
-      //   zoom={14}
-      //   style={mapStyles}
-      //   initialCenter={{
-      //     lat: -1.2884,
-      //     lng: 36.8233
-      //   }}
-      // >
-      //   <Marker
-      //     onClick={this.onMarkerClick}
-      //     name={'Kenyatta International Convention Centre'}
-      //   />
-      //   <InfoWindow
-      //     marker={this.state.activeMarker}
-      //     visible={this.state.showingInfoWindow}
-      //     onClose={this.onClose}
-      //   >
-      //     <div>
-      //       <h4>{this.state.selectedPlace.name}</h4>
-      //     </div>
-      //   </InfoWindow>
-      // </Map>
     );
   }
 }

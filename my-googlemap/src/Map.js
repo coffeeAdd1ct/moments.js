@@ -80,8 +80,6 @@ export class CurrentLocation extends React.Component {
     this.loadMap();
   }
 
-
-
   renderChildren() {
     const { children } = this.props;
 
