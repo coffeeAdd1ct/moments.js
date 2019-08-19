@@ -1,10 +1,20 @@
 import React, {Component} from 'react';
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 import CurrentLocation from './Map';
+import Moment from './Moment';
+
 
 const mapStyles = {
   width: '100%',
   height: '100%'
+}
+
+const marker = {
+  title: 'test',
+  description: '',
+  scope: 'public',
+  pageTypeId: '30',
+  latlng: {lat: -25.344, lng: 131.036}
 }
 
 export class MapContainer extends Component {
@@ -38,7 +48,8 @@ export class MapContainer extends Component {
       >
         <Marker
           onClick={this.onMarkerClick}
-          name={'Kenyatta International Convention Centre'}
+          name={marker.title}
+          position={marker.latlng}
         />
         <InfoWindow
           marker={this.state.activeMarker}

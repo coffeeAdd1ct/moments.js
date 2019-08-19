@@ -1,6 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-##Moment.js
+## Moment.js
+
+### This app is just a plain Google Map application. It will be ported to other projects.
 
 ## Available Scripts
 
@@ -71,3 +73,4 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 Credits:
  - https://scotch.io/tutorials/react-apps-with-the-google-maps-api-and-google-maps-react
+ - https://developers.google.com/maps/documentation/javascript/adding-a-google-map
